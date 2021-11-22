@@ -1,0 +1,882 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" href="./images/mypic.jpg">
+    <meta name="theme-color" content="black">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subhankar Potfolio</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Shippori+Antique&display=swap');
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        ::-webkit-scrollbar{
+            width: 5px;
+        }
+        ::-webkit-scrollbar-thumb{
+            background-color: red;
+
+        }
+        ::-webkit-scrollbar-track{
+            background-color: black;
+        }
+        body{
+            background-image: url(/images/full_image.jpg);
+        }
+        header{
+            display: flex;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            justify-content: space-between;
+        }
+        .nick_name{
+            margin-left: 10px;
+            color: white;
+            font-size: 2rem;
+            font-family: 'Shippori Antique', sans-serif;
+            font-weight: 700;
+        }
+        nav{
+            width: 50%;
+            color: white;
+            font-size: 1.2rem;
+            font-family: 'Shippori Antique', sans-serif;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;            
+        }
+        nav .menu{
+            text-transform: capitalize;
+            width: 100%;
+            text-align: center;
+            padding: 10px 12px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        
+        nav .menu:hover,.active
+        {
+            color: rgb(212, 4, 4);
+        }
+        span.atrate{
+            color: rgb(212, 4, 4)
+        }
+        .lr-head{
+            display: flex;
+            align-items: baseline;
+            width: 40%;
+            justify-content: space-between;
+        }
+        .ham-menu{
+
+            display: none;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            width: 50px;
+            height: 40px;
+            padding: 2px 10px;
+            border: 3px solid white;
+        }
+        .line
+        {
+            width: 30px;
+            height: 5px;
+            background-color: white;
+        }
+        .scroll_hrader .nick_name{
+            color: black;
+        }
+        .scroll_hrader nav{
+            color: black;
+        }
+        .scroll_hrader{
+            transition: 0.5s;
+            background-color: white;
+        }
+        /* workting in page 1 --start */
+        .page1{
+            height: 93vh;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+        .user-image{
+            width: 50%;
+            
+        }
+        img.mypic{
+            height: 50%;
+            border-radius: 50%;
+        }
+        .text{
+            width: 500px;
+            display: flex;
+            color: white;
+            font-size: 2rem;
+            font-family: 'Shippori Antique', sans-serif;
+        }
+        .width{
+            width: 100%;
+            height: 10vh;
+        }
+        .opt-love{
+            transition: 0.5s;
+        }
+        /* Working on page 2 */
+        .page2{
+            width: 96%;
+            overflow-x: hidden;
+            margin: 20px auto;
+            
+        }
+        .profile {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+        .p-left{
+            width: 95%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            padding: 10px;
+            line-height: 2;
+        }
+        .p-right{
+            height: 100%;
+            width: 95%;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            line-height: 2;
+            justify-content: space-around;
+        }
+        .profile .p-data
+        {           
+            color: white;
+            font-size: 1.2rem;
+            font-family: 'Shippori Antique', sans-serif;
+        }
+        /* .......................... */
+        @media screen and (max-width: 768px){
+            body{
+            background-image: url(/images/mobile_back.jpg);
+        }  
+        header{
+            flex-direction: column;
+            z-index: 100;
+            height: 60px;
+            background-color: black;
+        }
+        .active{
+            color: white;
+            background-color: rgba(212, 4, 4,0.2);
+        }
+        nav .menu:hover{
+            background-color: rgba(212, 4, 4,0.2);
+            color: white;
+        }
+        .lr-head{
+            align-items: center;
+            width: 100%;
+        }
+        .menu{
+            display: flex;
+            height: 100%;
+            justify-content: center;
+            align-items: center;
+        }
+        .ham-menu{
+            margin-right: 5px;
+            display: flex;
+        }
+        nav{
+            transition: 0.5s;
+            left: -100%;
+            position: relative;
+            background-color: rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(10px);
+            width: 100%;
+            z-index: 100;
+            height: 87vh;
+            flex-direction: column;
+        }
+        .page1{
+            justify-content: center;
+            flex-direction: column;
+        }
+        .text{
+            font-size: 1.2rem;
+            width: 100%;
+        }
+        
+        .profile{
+            flex-direction: column;
+        }
+        }
+        /* ...................... */
+        .page3
+        {
+            overflow: hidden;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .card{
+            z-index: 1;
+            margin: 10px;
+            padding: 5px;
+            width: 300px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            height: 350px;
+            border-radius: 10px;
+            background-color: white;
+        }
+        .card .images{
+            padding: 2px;
+            width: 100%;
+            border-radius: 10px;
+            height: 50%;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .card .images img{
+            width: 100%;
+            transition: 0.5s;
+            height: 100%;
+        }
+        .card:hover .images img
+        {
+            width: 110%;
+            height: 110%;
+        }
+        
+        .font{
+            font-family: 'Shippori Antique', sans-serif;
+        }
+        .cpp
+        {
+            width: 100%;
+            height: 50px;
+            height: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+        .tracker{
+            width: 90%;
+
+            height: 10px;
+            background-color: rgb(255, 255, 255);
+            border-radius: 10px;
+            display: flex;
+            transition: 1s;
+            align-items: center;
+
+        }
+        .tracker:hover .line_1
+        {
+            width: 100%;
+
+        }
+        @keyframes anima {
+            0%{
+                filter: hue-rotate(0deg) blur(5px);
+            }
+            100%{
+                filter: hue-rotate(360deg) blur(5px);
+            }
+        }
+
+        .line_1{
+            margin: 20px auto;
+            width: 100%;
+            box-shadow: 0 0 10px rgb(62, 62, 255),
+                        0 0 20px rgb(62, 62, 255),
+                        0 0 30px rgb(62, 62, 255);
+            border-radius: 10px;
+            animation-name: anima;
+            animation-duration: 1s;
+            animation-direction: alternate;
+            animation-iteration-count: infinite;
+            transition: 1s;
+            height: 100%;
+            background: linear-gradient(90deg,rgb(35, 127, 233),orange,red,blue,orange,red,blue);
+        }
+        a{
+            color: whitesmoke;
+        }
+        .heading{
+            color: white;
+            text-decoration: underline;
+        }
+        h1{
+            text-shadow: 0 0 10px rgb(0, 68, 131),
+            0 0 12px rgb(0, 68, 131),
+            0 0 15px rgb(0, 68, 131),
+            0 0 20px rgb(0, 68, 131),
+            0 0 21px rgb(0, 68, 131);
+            
+        }
+        .page4{
+            width: 100vw;
+            margin-top: 20px;
+        }
+        .box-bar
+        {
+            margin: 5px;
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+
+        }
+        .subject{
+            color: white;
+            width: 20%;
+        }
+        .pipe-tracker
+        {
+            width: 60%;
+            display: flex;
+            align-items: center;
+            justify-content:space-between;
+            height: 10px;
+            background-color: white;
+            border-radius: 10px;
+
+        }
+        .pipe-filler{
+            background: linear-gradient(90deg,orange,red,orange,yellow,rgb(0, 255, 13),rgb(255, 0, 136),rgb(111, 0, 255));
+            width: 0;
+            height: 100%;
+            border-radius: 10px;
+            transition: 0.5s;
+
+        }
+        .subject-percnt {
+            width: 20%;
+            text-align: center;
+            color: white;
+        }
+        .page5{
+            width: 95%;
+            margin: 20px auto;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .yt-card iframe{
+            margin: 3px 5px;
+            border: 0;
+            border-radius: 10px;
+        } 
+        .loader{
+            opacity: 1;
+            transition: 1s;
+            width: 100%;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            background-color: white;
+            z-index: 100000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        } 
+        .circle
+        {
+            width: 100px;
+            height: 100px;
+            background-color: rgb(54, 54, 54);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .rotater
+        {
+            width: 70%;
+            height: 70%;
+            transition: 1s;
+            border-radius: 50%;
+            border-bottom: 5px solid rgb(54, 54, 54);
+            border-top: 5px solid red;
+            border-left: 5px solid rgb(54, 54, 54);
+            border-right: 5px solid red;
+            animation-name: roter;
+            animation-timing-function: ease-out;
+            animation-duration: 5s;
+            animation-iteration-count: infinite;
+
+
+        }
+        @keyframes roter {
+            0%{
+                
+            transform: rotate(0deg);
+            }
+            100%{
+                
+            transform: rotate(3600deg);
+            }
+        }
+       
+
+
+    </style>
+</head>
+<body onload="vanish_loader()">
+    <div class="loader">
+        <div class="circle">
+            <div class="rotater"></div>
+        </div>
+    </div>
+    <header>
+        <div class="lr-head">
+            <div class="nick_name"><span class="atrate">@</span>Kripton</div>
+            
+        <div class="ham-menu" onclick="drawer()">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+        </div>
+        <nav>
+            <div class="menu active">Home</div>
+            <div class="menu">About</div>
+            <div class="menu">achievement</div>
+            <div class="menu">skills</div>
+            <div class="menu">projects</div>
+            <div class="menu">contacts</div>
+        </nav>
+    </header>
+    <main>
+        <div class="page1">
+            <div class="user-image">
+                <img src="/images/mypic.jpg" class="mypic"></div>
+            <div class="code-desgin-dev">
+                <span class="text">I l<p style="color: red;">❤</p>ve &nbsp; <div class="stuffs">
+                    <div class="stuff-box">
+                        <div class="opt-love">Coding ⌨</div>
+                    <div class="opt-love">Developement 💻</div>
+                    <div class="opt-love">Learning 📖</div>
+                    <div class="opt-love">Chess ♟</div>
+                    <div class="opt-love">Traveling ✈</div>
+                
+                    </div>
+                    </div>
+                </span>
+            </div>
+        </div>
+        <!-- <iframe src="https://bookbin.tech/" width="500" height="500px"></iframe>
+        <iframe src="https://kription-covid-19.herokuapp.com/" width="500" height="500px"></iframe> -->
+        <div class="page2">
+            <div class="width"></div>
+            <div class="profile">
+                <div class="p-left">
+                    <div><h1 class="heading">My Self</h1></div>
+                    <div class="p-data p-l-data">Name: Subhankar Dutta</div>
+                    <div class="p-data p-l-data">Email: subhankar0810@gmail.com</div>
+                    <div class="p-data p-l-data">Father Name: Mr. Pradeep Kumar Dutta</div>
+                    <div class="p-data p-l-data">Mother Name: Sabitri Dutta</div>
+                    <div class="p-data p-l-data">Blood Group: AB+</div>
+                    <details class="p-data p-l-data">
+                        <summary>Hobbies </summary>
+                        <ul>
+                            <li>Playing Chess ♟️</li>
+                            <li>Listining Music 🎶</li>
+                            <li>Long Drive 🚗</li>
+                            <li>Learning Something New 📚</li>
+                            <li>Watching / Listining / Reading Mythological content 🕉️</li>
+                            <li>Playing with my Rubix Cube (3x3) I solve it in 90 seconds </li>
+                        </ul>
+                    </details>
+                    <div class="p-data p-l-data"> <li>What I want to be in life? <br>Ans-> A good teacher</li> </div>
+                    <div class="p-data p-l-data"> <li>I am good at? <br>Ans-> Explaining my views and Ideas and also want to incourage everyone to learn and teach</li> </div>
+                    <div class="p-data p-l-data"> <li>I am bad at? <br>Ans-> Taking care of my own Health </li> </div>
+                    
+                </div>
+                <div class="p-right">
+                    <div><h1 class="heading">Education</h1></div>
+                    
+                    <div class="p-data p-r-data">
+                        <ul>
+                            <li>I have compleated my matriculation(Class 10) from <a href="http://aiwcaoe.edu.in/" target="_Blank">AIWC Academy of excellence</a>  (CBSE affiliated) with 8-CGPA from 2016 to 2017</li>
+                            <li>I have compleated my intermediate(Class 12) from <a href="http://aiwcaoe.edu.in/" target="_Blank">AIWC Academy of excellence</a>  (CBSE affiliated) with 79.4% and my subject was Physics, Chemistry, Mathematics, Computer Science with C++ and English from 2018 to 2019
+                                <br>-My best 3 subject was <ul>
+                                    <li>Mathematics - 95%</li>
+                                    <li>Physics - 90%</li>
+                                    <li>Computer Science - 88%</li>
+                                </ul> </li>
+                            <li>Currently I am presuing my B.Tech degree(Undergraduate) from <a href="https://uem.edu.in/" target="_blank">University of Engineering and Management, Kolkata</a>  from 2019 to 2023</li>
+                            </ul>
+                         </div>
+            </div>
+        </div>
+    
+        <div class="page3" id="data_achivement">
+            
+            
+           
+        </div>
+        <div class="page4">
+            <div class="bar-cont" id="sub_datas">
+                
+            </div>
+        </div>
+        <div class="page5">
+            <div class="yt-card">
+            </div>
+        </div>
+    </main>
+    <footer></footer>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/ScrollTrigger.min.js"></script>
+    <script>
+        function vanish_loader()
+        {
+            var sel = document.querySelector('.loader');
+            sel.style.opacity = 0;
+        }
+        function ytcall()
+        {
+            localStorage.setItem("data","called");
+            var url ="https://www.googleapis.com/youtube/v3/search";
+            $.ajax({
+                url: url,
+                type:'get',
+                data:{
+                    
+                    chart:'mostPopular',
+                    order:'date',
+                    part:'snippet',
+                    channelId:'UCt6f1XIkwEPRcQ9v8F7OTyw',
+                    maxResults:20,
+                    key:'AIzaSyD5B-PKF_s0mK0OGqEicqNe71Pwp-yQ_qU'
+                },
+                success : function(data)
+                { 
+                    var str = "";
+                    console.log(data)
+                    for (let index = 0; index < data.items.length; index++) {
+                         str =str + "<iframe src=\"https://www.youtube.com/embed/"+data.items[index].id.videoId+"\"></iframe>";                        
+                    }
+                    console.log(str)
+                    document.querySelector('.yt-card').innerHTML = str;
+                }
+            })
+        }
+        ytcall();
+        var certificates_data=[
+            {
+                'imgUrl':'class_11_math_top.jpg',
+                'for':'Highest scorer in Mathematics class 11',
+                'when':'2018',
+                'givenby':'AIWC Academy Of Excellence',
+                'pos':'First'
+            },
+            {
+                'imgUrl':'class_12_math_top.jpg',
+                'for':'Highest scorer in Mathematics class 12',
+                'when':'2019',
+                'givenby':'AIWC Academy Of Excellence',
+                'pos':'First'
+            },
+            {
+                'imgUrl':'class_12_phys_top.jpg',
+                'for':'Highest scorer in Physics class 12',
+                'when':'2019',
+                'givenby':'AIWC Academy Of Excellence',
+                'pos':'First'
+            },
+            {
+                'imgUrl':'class_12_top.jpg',
+                'for':'Highest scorer in School(science) class 12',
+                'when':'2019',
+                'givenby':'AIWC Academy Of Excellence',
+                'pos':'First'
+            },
+            {
+                'imgUrl':'class12_certificate_toper.jpg',
+                'for':'Highest scorer in Science class 12',
+                'when':'2019',
+                'givenby':'Savaram foundation and Amity University',
+                'pos':'First'
+            },
+            {
+                'imgUrl':'jhagran_class12.jpg',
+                'for':'Highest scorer in Science class 12',
+                'when':'2019',
+                'givenby':'Dainik Jagran',
+                'pos':'First'
+            },
+            {
+                'imgUrl':'prabhatkhabar_class12.jpg',
+                'for':'Highest scorer in Science class 12',
+                'when':'2019',
+                'givenby':'Prabhat Khabar',
+                'pos':'First'
+            },
+            {
+                'imgUrl':'android_intership.jpg',
+                'for':'Teaching Android in there Instution',
+                'when':'2021',
+                'givenby':'Py-Volution'
+            },
+            {
+                'imgUrl':'java_intership.jpg',
+                'for':'Teaching JAVA in there Instution',
+                'when':'2021',
+                'givenby':'Py-Volution'
+            },
+            {
+                'imgUrl':'c_classes_intership.jpg',
+                'for':'Teaching C in there Instution',
+                'when':'2021',
+                'givenby':'TCCA',
+                'pos':'First'
+            },
+            {
+                'imgUrl':'coce_manipal_java.jpg',
+                'for':'Completing core JAVA short-term corse',
+                'when':'2019',
+                'givenby':'COCE Manipal',
+            },
+            {
+                'imgUrl':'health_highway_intership.jpg',
+                'for':'Android App Developement Internship',
+                'when':'2021',
+                'givenby':'Health Highway, Uttrakhand',
+            }
+        ];
+        var str = "";
+        for (let index = 0; index < certificates_data.length; index++) {
+            str =str+ "<div class=\"card\">"+
+                    "<div class=\"images\">"+
+                        "<img src=\"./certificates/"+certificates_data[index].imgUrl+"\">"+
+                    "</div>"+
+                    "<div class=\"award-for font\">"+certificates_data[index].for+"</div>"+
+                    "<div class=\"when-given font\">Date: "+certificates_data[index].when+"</div>"+
+                    "<div class=\"givenby font\">Given By: "+certificates_data[index].givenby+"</div>"+
+                    "<div class=\"pos-hold font\">Position hold: "+certificates_data[index].pos+"</div>"+
+                    "<div class=\"desc-on-awd font\"></div>"+
+                "</div>";        
+        }
+        document.getElementById('data_achivement').innerHTML = str;
+        console.log(certificates_data);
+        gsap.registerPlugin(ScrollTrigger);
+        gsap.fromTo(
+            ".card",
+            {
+                opacity:0,
+                y:200
+            },
+            
+            {
+             y:0,
+             duration:1,
+             ease:"back",
+             opacity:1,
+             scrollTrigger:{
+             toggleActions:"play none none reverse",
+             scrub:4,
+               trigger:".card",
+               end:"top 70%",
+               start:"top 90%"
+             }
+           }
+
+        )
+        function fx_call()
+        {
+            var all_file= document.querySelectorAll('.pipe-filler');
+            for (let index = 0; index < all_file.length; index++) {
+                                
+            }
+            
+        }
+
+        var skillsJSON = [
+            {
+                'subject':'JAVA',
+                'knowledge':80,
+            },
+            {
+                'subject':'C/C++',
+                'knowledge':90,
+            },
+            {
+                'subject':'DBMS',
+                'knowledge':75,
+            },
+            {
+                'subject':'Android Dev',
+                'knowledge':85,
+            },
+            {
+                'subject':'Web Dev',
+                'knowledge':89,
+            },
+            {
+                'subject':'Machine Learning',
+                'knowledge':50,
+            },
+            {
+                'subject':'Python',
+                'knowledge':50,
+            },
+            {
+                'subject':'Netbeans',
+                'knowledge':80,
+            }
+        ]
+            console.log(skillsJSON.length)
+            var setter="";
+        for (let index = 0; index < skillsJSON.length; index++) {
+            console.log(skillsJSON[index])
+            setter =setter+"<div class=\"box-bar\">"+
+                "<div class=\"subject font\">"+skillsJSON[index].subject+"</div>"+
+                " <div class=\"pipe-tracker\">"+
+                    " <div class=\"pipe-filler\" id= s"+index+"></div>"+
+                    "</div>          <div class=\"subject-percnt font\">   "+skillsJSON[index].knowledge+"%      </div>               </div>";
+                   var s = 's'+index;
+                   console.log(s);
+                    // document.getElementById(s).style.width = skillsJSON[index].knowledge+"%";
+                }
+        document.getElementById('sub_datas').innerHTML=setter;
+                for (let index = 0; index < skillsJSON.length; index++) {
+                    var s = 's'+index;
+                    document.getElementById(s).style.width = skillsJSON[index].knowledge+"%";
+                    set_gsap_to_each_line(skillsJSON[index].knowledge,"#"+s);
+
+                }
+                
+                function set_gsap_to_each_line(w,id)
+                {
+                    gsap.fromTo(id,{
+             opacity:0,
+             width:0
+         },{
+             width:w+"%",
+             duration:1,
+             opacity:1,
+             scrollTrigger:{
+             toggleActions:"play none none reverse",
+             scrub:4,
+               trigger:id,
+               end:"top 100%",
+               start:"top 100%"
+             }
+           });
+                }
+
+         gsap.fromTo(".p-l-data",{
+             opacity:0,
+             x:"-50vw"
+         },{
+             x:"4vh",
+             duration:1,
+             opacity:1,
+             scrollTrigger:{
+             toggleActions:"play none none reverse",
+             scrub:4,
+               trigger:".p-l-data",
+               end:"top center",
+               start:"top center"
+             }
+           });
+
+//p-r-data
+
+gsap.fromTo(".p-r-data",{
+             opacity:0,
+             x:"50vw"
+         },{
+             x:"4vh",
+             duration:1,
+             opacity:1,
+             scrollTrigger:{
+             toggleActions:"play none none reverse",
+             scrub:4,
+               trigger:".p-r-data",
+               end:"top 10%",
+               start:"top 100%"
+             }
+           });
+
+
+
+
+
+
+
+
+
+
+
+        var draw=true;
+        function drawer(){
+            var drawerlayout = document.querySelector('nav');
+            if(draw)
+            {
+                drawerlayout.style.left="0";
+                draw = false;
+            }
+            else{
+                drawerlayout.style.left="-100%";
+                draw=true;
+            }
+        }
+        var p_l = -100;
+        window.addEventListener("scroll",(ev)=>{
+            var header = document.querySelector('header');
+            if(screen.width>800)
+            {
+                header.classList.toggle('scroll_hrader',(window.pageYOffset>0))
+            }
+        })
+        var stuff= document.querySelectorAll('.opt-love');
+        for(var i = 0 ;i<stuff.length;i++)
+        {
+            stuff[i].style.display = "none";
+            if(p_l<=0)
+            {
+                // p_l= p_l + ()
+            }
+        }
+        k=0;
+        setInterval(function fx(){
+            for(var i = 0 ;i<stuff.length;i++)
+        {
+            stuff[i].style.display = "none";
+        }   
+        if(k<stuff.length)
+        {
+            stuff[k].style.display="block";
+            k++;
+        }
+        else{
+            k=0;
+        }
+        },800);
+    </script>
+</body>
+</html>
