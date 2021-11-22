@@ -13,6 +13,7 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            scroll-behavior: smooth;
         }
         ::-webkit-scrollbar{
             width: 5px;
@@ -54,6 +55,8 @@
         nav .menu{
             text-transform: capitalize;
             width: 100%;
+            color: white;
+            text-decoration: none;
             text-align: center;
             padding: 10px 12px;
             cursor: pointer;
@@ -93,7 +96,7 @@
         .scroll_hrader .nick_name{
             color: black;
         }
-        .scroll_hrader nav{
+        .scroll_hrader nav a{
             color: black;
         }
         .scroll_hrader{
@@ -164,6 +167,9 @@
             color: white;
             font-size: 1.2rem;
             font-family: 'Shippori Antique', sans-serif;
+        }
+        .p-data ul li a{
+            color: white;
         }
         /* .......................... */
         @media screen and (max-width: 768px){
@@ -417,9 +423,9 @@
             transition: 1s;
             border-radius: 50%;
             border-bottom: 5px solid rgb(54, 54, 54);
-            border-top: 5px solid red;
+            border-top: 5px dotted red;
             border-left: 5px solid rgb(54, 54, 54);
-            border-right: 5px solid red;
+            border-right: 5px dotted red;
             animation-name: roter;
             animation-timing-function: ease-out;
             animation-duration: 5s;
@@ -437,9 +443,54 @@
             transform: rotate(3600deg);
             }
         }
-       
-
-
+        .card-project{
+            z-index: 1;
+            margin: 10px auto;
+            padding: 5px;
+            width: 300px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            height: 350px;
+            border-radius: 10px;
+            background-color: white;
+        }
+        .frame_card{
+            width: 100%;
+            height: 60%;
+        }
+       .frame_card iframe{
+           height: 100%;
+           width: 100%;
+            border-radius: 10px;
+       }
+       a{
+           color: black;
+       }
+       .content
+       {
+           width: 100%;
+           display: flex;
+           flex-wrap: wrap;
+       }
+       .page6{
+        overflow: hidden;
+       }
+       .desc-pro{
+            font-family: 'Shippori Antique', sans-serif;}
+            .links-social{
+                display: flex;
+                justify-content: space-around;
+                flex-wrap: wrap;
+            }
+            .links-social img{
+                width: 50px;
+                background-color: white;
+                border-radius: 50%;
+                padding: 10px;
+                height: 50px;
+            }
     </style>
 </head>
 <body onload="vanish_loader()">
@@ -458,17 +509,17 @@
             <div class="line"></div>
         </div>
         </div>
-        <nav>
-            <div class="menu active">Home</div>
-            <div class="menu">About</div>
-            <div class="menu">achievement</div>
-            <div class="menu">skills</div>
-            <div class="menu">projects</div>
-            <div class="menu">contacts</div>
+        <nav onclick="close_bar()">
+            <a href="#home" class="menu active">Home</div>
+            <a href="#about" class="menu">About</div>
+            <a href="#data_achivement" class="menu">achievement</div>
+            <a href="#sub_datas" class="menu">skills</div>
+            <a href="#project" class="menu">projects</div>
+            <a href="#contact" class="menu">contacts</div>
         </nav>
     </header>
     <main>
-        <div class="page1">
+        <div class="page1" id="home">
             <div class="user-image">
                 <img src="/images/mypic.jpg" class="mypic"></div>
             <div class="code-desgin-dev">
@@ -487,7 +538,7 @@
         </div>
         <!-- <iframe src="https://bookbin.tech/" width="500" height="500px"></iframe>
         <iframe src="https://kription-covid-19.herokuapp.com/" width="500" height="500px"></iframe> -->
-        <div class="page2">
+        <div class="page2" id="about">
             <div class="width"></div>
             <div class="profile">
                 <div class="p-left">
@@ -541,8 +592,63 @@
                 
             </div>
         </div>
-        <div class="page5">
-            <div class="yt-card">
+        <div class="page5" >
+            <div class="yt-card" id="project">
+            </div>
+        </div>
+        <div class="page6" >
+            <h1 class="heading">My Projects</h1>
+            <div class="content">
+                <div class="card-project">
+                    <div class="frame_card"><iframe src="https://bookbin.tech" frameborder="0"></iframe></div>
+                    <a href="http://bookbin.tech" target="_blank">Visit Website</a>
+                    <div class="desc-pro">This is a Website where a persone can buy and sell book the Website is made up of PHP, JS, MySQL, CSS and HTML</div>
+                </div>
+                <div class="card-project">
+                    <div class="frame_card"><iframe src="https://kription-covid-19.herokuapp.com/" frameborder="0"></iframe></div>
+                    <a href="https://kription-covid-19.herokuapp.com/" target="_blank">Visit Website</a>
+                    <div class="desc-pro">This is a Website you can search covid-19 report all over the country PHP, JS, MySQL, CSS and HTML</div>
+                </div>
+                <div class="card-project">
+                    <div class="frame_card"><img src="./images/project/ocr_java_project.png" width="100%" height="100%" frameborder="0"></iframe></div>
+                    <a href="https://github.com/Kripton0810/ocr_java_project" target="_blank">Visit Website</a>
+                    <div class="desc-pro">OCR ditector which convert images text into editable text and voice it curently support english language and very soon other version will also launch</div>
+                </div>
+                <div class="card-project">
+                    <div class="frame_card"><img src="./images/project/ai_voice.png" width="100%" height="100%" frameborder="0"></iframe></div>
+                    
+                    <div class="desc-pro">This is a app like siri and android assistant where you can ask a joke or weather detials</div>
+                </div>
+                <div class="card-project">
+                    <div class="frame_card"><img src="./images/project/air_disaster.png" width="100%" height="100%" frameborder="0"></iframe></div>
+                    
+                    <div class="desc-pro">This is a app where you can find you air qulity and get details on each compound in air Python and JAVA used to build this project and mechine learning (Disicion Tree)</div>
+                </div>
+                <div class="card-project">
+                    <div class="frame_card"><img src="./images/project/inventroy_management.png" width="100%" height="100%" frameborder="0"></iframe></div>
+                    
+                    <div class="desc-pro">This is a app where you can add a product in your inventroy just scan the bar code and fill the detials and you will able to access the items in your store its main moto is to provide the qulity of super market in each small shops</div>
+                </div>
+                <div class="card-project">
+                    <div class="frame_card"><img src="./images/project/sreesubhapp.png" width="100%" height="100%" frameborder="0"></iframe></div>
+                   
+                    <div class="desc-pro">Employee data management where Employee will give there attandance and ask for leave and all the request and data will shown in admin page</div>
+                </div>
+                <div class="card-project">
+                    <div class="frame_card"><img src="./images/project/ss_disaster.png" width="100%" height="100%" frameborder="0"></iframe></div>
+                    
+                    <div class="desc-pro">This is a app where you can find all vaccination updates just enter your pin code and also you will get you current location in map and a special button known as sos button where you can send urgent and sos notification to your special contact and also you will get weather report</div>
+                </div>
+            </div>
+        </div>
+        <div class="page7" id="contact">
+            <div class="links-social">
+                <a href="https://www.instagram.com/ig_kripton/" target="_blank" rel="noopener noreferrer"><img src="./images/social/insta.png"></a>
+                <a href="https://www.facebook.com/subhankar.dutta.395669/" target="_blank" rel="noopener noreferrer"><img src="./images/social/Facebook-logo.png"></a>
+                <a href="https://github.com/Kripton0810/" target="_blank" rel="noopener noreferrer"><img src="./images/social/git.png"></a>
+                <a href="https://www.linkedin.com/in/subhankar-d-b87943128/" target="_blank" rel="noopener noreferrer"><img src="./images/social/linkedin.png"></a>
+                <a href="https://www.youtube.com/channel/UCt6f1XIkwEPRcQ9v8F7OTyw" target="_blank" rel="noopener noreferrer"><img src="./images/social/ytf.png"></a>
+                
             </div>
         </div>
     </main>
@@ -551,14 +657,19 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/ScrollTrigger.min.js"></script>
     <script>
+        
         function vanish_loader()
         {
             var sel = document.querySelector('.loader');
             sel.style.opacity = 0;
+            setTimeout(()=>{                
+                 sel.style.display = "none";
+            },1000);
         }
         function ytcall()
         {
             localStorage.setItem("data","called");
+            //googleapis.com remember
             var url ="https://www.googleapis.com/youtube/v3/search";
             $.ajax({
                 url: url,
@@ -683,6 +794,27 @@
         document.getElementById('data_achivement').innerHTML = str;
         console.log(certificates_data);
         gsap.registerPlugin(ScrollTrigger);
+        gsap.fromTo(
+            ".card-project",
+            {
+                opacity:0,
+                y:200
+            },
+            
+            {
+             y:0,
+             duration:1,
+             ease:"back",
+             opacity:1,
+             scrollTrigger:{
+             toggleActions:"play none none reverse",
+             scrub:4,
+               trigger:".card-project",
+               end:"top 70%",
+               start:"top 90%"
+             }
+           })
+
         gsap.fromTo(
             ".card",
             {
@@ -844,6 +976,12 @@ gsap.fromTo(".p-r-data",{
                 drawerlayout.style.left="-100%";
                 draw=true;
             }
+        }
+        function close_bar()
+        {
+            var drawerlayout = document.querySelector('nav');
+            drawerlayout.style.left="-100%";
+            draw=true;
         }
         var p_l = -100;
         window.addEventListener("scroll",(ev)=>{
